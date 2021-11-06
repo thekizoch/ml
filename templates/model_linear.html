@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Linear Model</title>
+
+  <!-- Import TensorFlow.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+  <!-- Import tfjs-vis -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.0.2/dist/tfjs-vis.umd.min.js"></script>
+</head>
+<body>
+  <h1>Linear Model</h1>
+  <p>This model takes a subset from the <a href='https://www.kaggle.com/uciml/autompg-dataset'>
+    Auto-mpg data set.</a> It only takes<br>
+    2 dimensional data: the mile per gallon (mpg) and horsepower (hp).<br><br>
+    The linear model is greatly improved to a 'deep model' by adding <br>
+    just a few layers of 8 neurons with the ReLu activation function.<br><br>
+    Scroll down to see it train and predict, live, client side.<br><br>
+    <a href='/'>Home page</a>
+  </p>
+  <!-- Import the main script file -->
+  <script src="{{url_for('static', filename='model_linear_script.js')}}"></script>
+</body>
+</html>

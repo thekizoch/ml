@@ -1,4 +1,6 @@
 Dockerfile
+notebooks
+node_modules
 README.md
 *.pyc
 *.pyo

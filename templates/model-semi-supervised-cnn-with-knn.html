@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semi-supervised CNN with K-means clustering</title>
+
+    <!-- Import TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+    <!-- Import tfjs-vis -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.0.2/dist/tfjs-vis.umd.min.js"></script>
+
+    <!-- Import the data file -->
+    <!--<script src="data.js" type="module"></script> -->
+    <script src="{{url_for('static', filename='model-semi-supervised-cnn-with-knn-data.js')}}" type="module"></script>
+
+    <!-- Import the main script file -->
+    <script src="{{url_for('static', filename='model-semi-supervised-cnn-with-knn.js')}}" type="module"></script>
+    <!--<script src="scratch_1.js" type="module"></script> -->
+
+</head>
+
+<body>
+
+<p>
+    There are two models running sequentially on this page on the MNIST dataset.<br>
+    Take a look at the input data by clicking the Input Data tab.<br><br>
+
+    The first model trains a CNN on 5,500 labelled training examples. You can<br>
+    see the model architecture and live training output in the Model tab.<br>
+    Once it finishes, you can see accuracy per class in the Evaluation tab.<br><br>
+
+    The overall accuracy is about 89%. This is great, but to have 5,500 labelled<br>
+    examples in real world applications would be expensive. We'll train the<br>
+    same CNN model on only 50 labelled examples to compare.<br><br>
+
+    You can see the live training in the Model-50 tab. The Evaluation for Model-50<br>
+    tab will show you the poor results. The overall accuracy is only 25%. Still better<br>
+    than random chance though.<br><br>
+
+    Using semi-supervised learning with k-means clustering, we can achieve much higher<br>
+    accuracy with only 50 trained examples. Since k-mean method is more computationally<br>
+    expensive on the MNIST dataset for ~50,000 examples, it's best done in Colaboratory.<br>
+    To see the machine do the work of labelling, follow the link below. <br><br>
+
+    <a href="https://colab.research.google.com/github/thekizoch/ml/blob/master/semi-supervised-cnn-with-kmeans.ipynb">Semi-supervised
+        CNN with K-means clustering</a><br><br>
+    <a href='/'>Home page</a>
+</p>
+
+</body>
+</html>

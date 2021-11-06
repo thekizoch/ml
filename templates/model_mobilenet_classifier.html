@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <!-- Load the latest version of TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+  </head>
+  <body>
+    <div id="console"></div>
+    <!-- Add an image that we will use to test -->
+    <video autoplay height="224" id="webcam" muted playsinline width="224"></video>
+    <button id="class-a">Add A</button>
+    <button id="class-b">Add B</button>
+    <button id="class-c">Add C</button>
+    <p>Web cam is needed for this demo. Wait while MobileNet model loads.<br><br>
+      Using a K-Nearest Neighbors Classifier, we can use Transfer Learning<br>
+      to extend a well-trained model to our use case.<br><br>
+      You can use common objects or face/body gestures to capture images for <br>
+      each of the three classes. Each time you click one of the "Add" buttons,<br>
+      one image is added to that class as a training example. While you do this, <br>
+      the model continues to make predictions on webcam images coming in and <br>
+      shows the results in real-time.<br><br>
+      <a href='/'>Home page</a>
+    </p>
+    <!-- Load index.js after the content of the page -->
+    <script src="{{url_for('static', filename='model_mobilenet_classifier.js')}}"></script>
+  </body>
+</html>
